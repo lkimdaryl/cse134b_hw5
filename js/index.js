@@ -4,8 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const starsContainer = document.getElementById("stars");
     const messageElement = document.getElementById("message");
     const inputRate = document.getElementById("rating");
+    const sentByInput = document.querySelector('input[name="sentBy"]');
     const submit = document.querySelector("button[type='submit']");
     inputRate.style.display = "none";
+    sentByInput.value = "JS";
     submit.style.display = "none";
 
     for (let i = 1; i <= maxStars; i++) {
@@ -48,11 +50,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const formDataObject = {};
         formData.forEach((value, key) => { formDataObject[key] = value; });
         const formDataJson = JSON.stringify(formDataObject);
-//        console.log('FormData as JSON:', formDataObject);
 
         fetch(endpoint, {
             method: form.method,
             headers: {
+                "X-Sent-By" : "JS",
                 "Content-Type" : "application/json"
             },
             body: formDataJson
