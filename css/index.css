@@ -1,0 +1,7 @@
+#stars {
+    font-size: 3rem;
+}
+
+#stars:hover{
+    cursor: pointer;
+}

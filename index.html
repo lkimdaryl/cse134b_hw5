@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rating Widget</title>
+    <link type="text/css" rel="stylesheet" href="css/index.css">
+<!--    <script src="js/index.js"></script>-->
+</head>
+<body>
+    <h1>Rating Widget</h1>
+    <rating-widget>
+        <form id="rating-form" action="https://httpbin.org/post" method="POST">
+            <label for="rating">How satisfied are you?</label>
+            <input type="hidden" name="question" value="How How satisfied are you?">
+            <input type="hidden" name="sentBy" value="HTML">
+            <input type="number" id="rating" name="rating" min="1" max="5" value="0" required>
+            <div id="stars"></div>
+            <output id="message"></output>
+            <button type="submit">Submit</button>
+        </form>
+    </rating-widget>
+</body>
+</html>
